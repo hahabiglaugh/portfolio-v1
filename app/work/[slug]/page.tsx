@@ -1,3 +1,4 @@
+import { withBasePath } from '@/lib/deployment-path';
 import type { Metadata } from 'next';
 import { projects } from '../../content';
 import { MynutchosCaseStudy } from './mynutchos-case-study';
@@ -6,6 +7,10 @@ import { ChageeCaseStudy } from './chagee-case-study';
 import './case-study.css';
 import './xiaohongshu.css';
 import './chagee.css';
+export function generateStaticParams() {
+  return projects.map(({ slug }) => ({ slug }));
+}
+
 export async function generateMetadata({
   params,
 }: {
@@ -30,10 +35,10 @@ export default async function ProjectPage({
   const p = projects.find((x) => x.slug === slug) ?? projects[0];
   return (
     <main className="placeholder">
-      <a href="/">← 返回首页</a>
+      <a href={withBasePath('/')}>← 返回首页</a>
       <p>CASE STUDY / COMING SOON</p>
       <h1>{p.title}</h1>
-      <img src={p.image} alt="" />
+      <img src={withBasePath(p.image)} alt="" />
       <p>此路由已建立，完整项目详情将在下一阶段制作。</p>
     </main>
   );

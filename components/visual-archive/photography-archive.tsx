@@ -1,5 +1,7 @@
 'use client';
 
+import { withBasePath } from '@/lib/deployment-path';
+
 import { useEffect, useState } from 'react';
 import type { PhotographyItem } from '../../lib/photography';
 
@@ -43,7 +45,7 @@ export function PhotographyArchive({ items }: PhotographyArchiveProps) {
           >
             <img
               loading={index < 2 ? 'eager' : 'lazy'}
-              src={item.image}
+              src={withBasePath(item.image)}
               alt={
                 item.title || `摄影作品 ${String(index + 1).padStart(3, '0')}`
               }
@@ -91,7 +93,7 @@ export function PhotographyArchive({ items }: PhotographyArchiveProps) {
             ←
           </button>
           <img
-            src={activeItem.image}
+            src={withBasePath(activeItem.image)}
             alt={
               activeItem.title ||
               `摄影作品 ${String(activeIndex + 1).padStart(3, '0')}`

@@ -1,3 +1,4 @@
+import { withBasePath } from '@/lib/deployment-path';
 import type { Metadata } from 'next';
 import { PhotographyArchive } from '../../components/visual-archive/photography-archive';
 import { SiteFooter } from '../../components/site-footer';
@@ -13,14 +14,14 @@ export default async function ArchivePage() {
   return (
     <main className="archive-page">
       <header className="inner-nav">
-        <a href="/">LSJ</a>
+        <a href={withBasePath('/')}>LSJ</a>
         <nav>
-          <a href="/#work">作品</a>
-          <a href="/archive" aria-current="page">
+          <a href={withBasePath('/#work')}>作品</a>
+          <a href={withBasePath('/archive')} aria-current="page">
             视觉档案
           </a>
-          <a href="/about">关于</a>
-          <a href="/Li-Sijing-Resume.pdf" target="_blank">
+          <a href={withBasePath('/about')}>关于</a>
+          <a href={withBasePath('/Li-Sijing-Resume.pdf')} target="_blank">
             查看简历 ↗
           </a>
         </nav>

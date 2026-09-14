@@ -1,3 +1,4 @@
+import { withBasePath } from '@/lib/deployment-path';
 import { copy as t, projects } from './content';
 import { SiteFooter } from '../components/site-footer';
 import type { PhotographyItem } from '../lib/photography';
@@ -15,11 +16,11 @@ export function Portfolio({
         </a>
         <nav>
           <a href="#work">作品</a>
-          <a href="/archive">视觉档案</a>
-          <a href="/about">关于</a>
+          <a href={withBasePath('/archive')}>视觉档案</a>
+          <a href={withBasePath('/about')}>关于</a>
           <a
             className="nav-resume"
-            href="/Li-Sijing-Resume.pdf"
+            href={withBasePath('/Li-Sijing-Resume.pdf')}
             target="_blank"
           >
             查看简历 ↗
@@ -34,7 +35,7 @@ export function Portfolio({
           <span className="outline">李思婧</span>
         </h1>
         <figure className="hero-photo">
-          <img src="/assets/hero.webp" alt="李思婧在热带植物前的生活照" />
+          <img src={withBasePath('/assets/hero.webp')} alt="李思婧在热带植物前的生活照" />
           <figcaption>肖像 / 吉隆坡</figcaption>
         </figure>
         <p className="hero-index">[ 01 — 05 ]</p>
@@ -46,7 +47,7 @@ export function Portfolio({
       <section className="intro" id="about">
         <p className="section-label">{t.introKicker}</p>
         <p className="intro-copy">{t.intro}</p>
-        <a className="text-link" href="/Li-Sijing-Resume.pdf" target="_blank">
+        <a className="text-link" href={withBasePath('/Li-Sijing-Resume.pdf')} target="_blank">
           {t.resume}
         </a>
       </section>
@@ -58,18 +59,18 @@ export function Portfolio({
         <div className="projects">
           {projects.map((p, i) => (
             <article className={`project project-${i + 1}`} key={p.slug}>
-              <a href={`/work/${p.slug}`} className="project-image">
-                <img src={p.image} alt={`${p.title} 项目视觉`} />
+              <a href={withBasePath(`/work/${p.slug}`)} className="project-image">
+                <img src={withBasePath(p.image)} alt={`${p.title} 项目视觉`} />
               </a>
               <div className="project-copy">
                 <span className="project-no">/{p.no}</span>
                 <p className="discipline">{p.discipline}</p>
                 <h3>
-                  <a href={`/work/${p.slug}`}>{p.title}</a>
+                  <a href={withBasePath(`/work/${p.slug}`)}>{p.title}</a>
                 </h3>
                 <p className="project-note">{p.note}</p>
                 <div className="project-links">
-                  <a className="text-link" href={`/work/${p.slug}`}>
+                  <a className="text-link" href={withBasePath(`/work/${p.slug}`)}>
                     {t.view}
                   </a>
                   {p.slug === 'xiaohongshu' && (
@@ -100,18 +101,18 @@ export function Portfolio({
             <br />
             <em>A collection of things I saw and kept.</em>
           </p>
-          <a href="/archive">查看视觉档案 →</a>
+          <a href={withBasePath('/archive')}>查看视觉档案 →</a>
         </div>
         <div className="archive-preview-images">
           {photographyPreview.map((photo, index) => (
             <a
-              href="/archive"
+              href={withBasePath('/archive')}
               className={`archive-preview-image preview-${index + 1}`}
               key={photo.id}
             >
               <img
                 loading="lazy"
-                src={photo.image}
+                src={withBasePath(photo.image)}
                 alt={`视觉档案预览 ${String(index + 1).padStart(2, '0')}`}
                 width={photo.width}
                 height={photo.height}

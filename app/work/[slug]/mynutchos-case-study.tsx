@@ -1,3 +1,4 @@
+import { withBasePath } from '@/lib/deployment-path';
 import { SiteFooter } from '../../../components/site-footer';
 
 const text = {
@@ -121,9 +122,9 @@ export function MynutchosCaseStudy() {
   return (
     <main className="mn" id="mn-top">
       <header className="mn-nav">
-        <a href="/">← {t.back}</a>
+        <a href={withBasePath('/')}>← {t.back}</a>
         <span>MYNUTCHOS / 2026</span>
-        <a href="/Li-Sijing-Resume.pdf" target="_blank">查看简历 ↗</a>
+        <a href={withBasePath('/Li-Sijing-Resume.pdf')} target="_blank">查看简历 ↗</a>
       </header>
       <section className="mn-hero">
         <div className="mn-hero-meta">
@@ -133,7 +134,7 @@ export function MynutchosCaseStudy() {
         <h1>MYNUTCHOS</h1>
         <figure>
           <img
-            src="/assets/mynutchos.webp"
+            src={withBasePath('/assets/mynutchos.webp')}
             alt="MyNutchos Malaysian spiced bites product composition"
           />
           <figcaption>{t.campaignMeta}</figcaption>
@@ -182,7 +183,7 @@ export function MynutchosCaseStudy() {
         <figure className="mood">
           <img
             loading="lazy"
-            src="/assets/mynutchos/moodboard.webp"
+            src={withBasePath('/assets/mynutchos/moodboard.webp')}
             alt="MyNutchos visual direction moodboard"
           />
           <figcaption>MOODBOARD / PLAYFUL · BOLD · INTERACTIVE</figcaption>
@@ -190,7 +191,7 @@ export function MynutchosCaseStudy() {
         <figure className="logo-study">
           <img
             loading="lazy"
-            src="/assets/mynutchos/logo-yellow.webp"
+            src={withBasePath('/assets/mynutchos/logo-yellow.webp')}
             alt="Yellow MyNutchos logo"
           />
           <figcaption>LOGO / CAMPAIGN PALETTE</figcaption>
@@ -198,7 +199,7 @@ export function MynutchosCaseStudy() {
         <figure className="poster-study">
           <img
             loading="lazy"
-            src="/assets/mynutchos-poster.webp"
+            src={withBasePath('/assets/mynutchos-poster.webp')}
             alt="Every Crunch Has a Voice poster"
           />
           <figcaption>HERO POSTER / 05.2026</figcaption>
@@ -215,7 +216,7 @@ export function MynutchosCaseStudy() {
             <figure className={`prod prod-${i + 1}`} key={x}>
               <img
                 loading="lazy"
-                src={`/assets/mynutchos/${x}`}
+                src={withBasePath(`/assets/mynutchos/${x}`)}
                 alt={`MyNutchos product photograph ${i + 1}`}
               />
               <figcaption>
@@ -234,17 +235,17 @@ export function MynutchosCaseStudy() {
         <div className="portrait-strip">
           <img
             loading="lazy"
-            src="/assets/mynutchos/portrait-alina.webp"
+            src={withBasePath('/assets/mynutchos/portrait-alina.webp')}
             alt="MyNutchos character content Alina"
           />
           <img
             loading="lazy"
-            src="/assets/mynutchos/portrait-saffi.webp"
+            src={withBasePath('/assets/mynutchos/portrait-saffi.webp')}
             alt="MyNutchos character content Saffi"
           />
           <img
             loading="lazy"
-            src="/assets/mynutchos/portrait-raf.webp"
+            src={withBasePath('/assets/mynutchos/portrait-raf.webp')}
             alt="MyNutchos character content Raffaella"
           />
         </div>
@@ -252,7 +253,7 @@ export function MynutchosCaseStudy() {
           <figure>
             <img
               loading="lazy"
-              src="/assets/mynutchos/ig-feed.webp"
+              src={withBasePath('/assets/mynutchos/ig-feed.webp')}
               alt="MyNutchos Instagram feed design"
             />
             <figcaption>TRIPLE GRID / FEED SYSTEM</figcaption>
@@ -260,7 +261,7 @@ export function MynutchosCaseStudy() {
           <figure>
             <img
               loading="lazy"
-              src="/assets/mynutchos/ig-screen-01.webp"
+              src={withBasePath('/assets/mynutchos/ig-screen-01.webp')}
               alt="MyNutchos Instagram campaign screen"
             />
             <figcaption>CAMPAIGN IN CONTEXT / 01</figcaption>
@@ -268,7 +269,7 @@ export function MynutchosCaseStudy() {
           <figure>
             <img
               loading="lazy"
-              src="/assets/mynutchos/ig-screen-02.webp"
+              src={withBasePath('/assets/mynutchos/ig-screen-02.webp')}
               alt="MyNutchos Instagram campaign screen"
             />
             <figcaption>CAMPAIGN IN CONTEXT / 02</figcaption>
@@ -314,10 +315,10 @@ export function MynutchosCaseStudy() {
               controls
               preload="none"
               playsInline
-              poster="/assets/mynutchos/countdown-01.webp"
+              poster={withBasePath('/assets/mynutchos/countdown-01.webp')}
             >
               <source
-                src="/assets/mynutchos/teaser-motion.mp4"
+                src={withBasePath('/assets/mynutchos/teaser-motion.mp4')}
                 type="video/mp4"
               />
             </video>
@@ -328,7 +329,7 @@ export function MynutchosCaseStudy() {
               <img
                 loading="lazy"
                 key={i}
-                src={`/assets/mynutchos/countdown-0${i}.webp`}
+                src={withBasePath(`/assets/mynutchos/countdown-0${i}.webp`)}
                 alt={`MyNutchos countdown ${i}`}
               />
             ))}
@@ -336,7 +337,7 @@ export function MynutchosCaseStudy() {
           <figure className="popup-poster">
             <img
               loading="lazy"
-              src="/assets/mynutchos/popup-poster.webp"
+              src={withBasePath('/assets/mynutchos/popup-poster.webp')}
               alt="MyNutchos pop-up campaign poster"
             />
             <figcaption>LAUNCH / CAMPUS POP-UP</figcaption>
@@ -344,7 +345,7 @@ export function MynutchosCaseStudy() {
           <figure className="popup-recap">
             <img
               loading="lazy"
-              src="/assets/mynutchos/popup-recap.webp"
+              src={withBasePath('/assets/mynutchos/popup-recap.webp')}
               alt="MyNutchos pop-up recap graphic"
             />
             <figcaption>RECAP / BACK TO SOCIAL</figcaption>
@@ -362,7 +363,7 @@ export function MynutchosCaseStudy() {
             <figure key={x}>
               <img
                 loading="lazy"
-                src={`/assets/mynutchos/${x}`}
+                src={withBasePath(`/assets/mynutchos/${x}`)}
                 alt={`MyNutchos behind the project ${i + 1}`}
               />
               <figcaption>
@@ -375,7 +376,7 @@ export function MynutchosCaseStudy() {
       <section className="mn-end">
         <p className="end-label">08 / {t.reflection}</p>
         <p className="reflection">{t.reflectionText}</p>
-        <a href="/work/xiaohongshu">
+        <a href={withBasePath('/work/xiaohongshu')}>
           <span>{t.next}</span>
           {t.nextName}
         </a>
